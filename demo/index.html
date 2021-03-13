@@ -46,11 +46,14 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       import { html, render } from 'lit-html';
       import '../granite-fate-roller.js';
 
+        
+      document.addEventListener('result', 
+            (evt) => console.log('Result', evt.detail));
       render(
         html`
           <p>Here you have an example of a Fate dice roller:</p>
           
-          <granite-fate-roller debug></granite-fate-roller>
+          <granite-fate-roller tooltip-position="bottom" debug></granite-fate-roller>
         `,
         document.querySelector('#demo1')
       );
