@@ -1,0 +1,34 @@
+{
+  "name": "@granite-elements/granite-fate-roller",
+  "version": "1.0.0",
+  "description": "A Fate dice roller web component",
+  "main": "granite-fate-roller.js",
+  "module": "granite-fate-roller.js",
+  "scripts": {
+    "serve": "npx es-dev-server --node-resolve --watch"
+  },
+  "keywords": [
+    "fate",
+    "dice",
+    "dice",
+    "roller",
+    "web",
+    "component",
+    "LitElement",
+    "lit-element"
+  ],
+  "author": "Horacio Gonzalez <horacio.gonzalez@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/lostinbrittany/granite-fate-roller.git"
+  },
+  "homepage": "https://github.com/lostinbrittany/granite-fate-roller",
+  "license": "MIT",
+  "dependencies": {
+    "lit-element": "^2.4.0"
+  },
+  "devDependencies": {
+    "@webcomponents/webcomponentsjs": "^2.5.0",
+    "es-dev-server": "^2.1.0"
+  }
+}
