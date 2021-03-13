@@ -89,26 +89,11 @@ export class GraniteTooltip extends LitElement {
         position: absolute;
         z-index: 9999;
       }
-      .tooltip__container::before {
-        content: ' ';
-        display: block;
-        width: 40px;
-        height: 40px;
-        position: absolute;
-        background: #f0f0f0;
-        box-shadow: 5px 5px 6px 0px rgba(50, 50, 50, 0.25);
-      }
       .tooltip__container--bottom {
-        top: calc(100% + 2rem);
+        top: calc(100% + 1rem);
         left: 50%;
         transform: translateX(-50%);
         animation: tooltip-fade 1s, tooltip-slide-bottom 0.5s ease;
-      }
-      .tooltip__container--bottom::before {
-        top: 0;
-        left: 50%;
-        z-index: 1;
-        transform: rotate(45deg) translateX(-50%);
       }
       .tooltip__container--top {
         bottom: calc(100% + 1rem);
@@ -116,35 +101,17 @@ export class GraniteTooltip extends LitElement {
         transform: translateX(-50%);
         animation: tooltip-fade 1s, tooltip-slide-top 0.5s ease;
       }
-      .tooltip__container--top::before {
-        top: auto;
-        bottom: -2rem;
-        left: 50%;
-        z-index: 3;
-        transform: rotate(45deg) translateX(-50%);
-      }
       .tooltip__container--left {
-        right: calc(100% + 3rem);
+        right: calc(100% + 2rem);
         top: 50%;
         transform: translateY(-50%);
         animation: tooltip-fade 1s, tooltip-slide-left 0.5s ease;
       }
-      .tooltip__container--left::before {
-        right: -2rem;
-        top: 50%;
-        z-index: 3;
-        transform: rotate(-45deg) translateY(-50%);
-      }
       .tooltip__container--right {
-        left: calc(100% + 3rem);
+        left: calc(100% + 1rem);
         top: 50%;
         transform: translateY(-50%);
         animation: tooltip-fade 1s, tooltip-slide-right 0.5s ease;
-      }
-      .tooltip__container--right::before {
-        left: 0;
-        top: 50%;
-        transform: rotate(-45deg) translateY(-50%);
       }
       .tooltip__trigger {
         display: inline-block;
@@ -153,7 +120,7 @@ export class GraniteTooltip extends LitElement {
       }
       .tooltip__popup {
         text-align: center;
-        padding: 1rem;
+        padding: 0.5rem;
         position: relative;
         z-index: 2;
         background: #f0f0f0;
@@ -165,8 +132,6 @@ export class GraniteTooltip extends LitElement {
         justify-content: space-evenly;
       }
       .tooltip__message {
-        text-align: left;
-        margin-bottom: 2rem;
       }
       .tooltip__close {
         text-decoration: underline;
@@ -196,7 +161,7 @@ export class GraniteTooltip extends LitElement {
           top: 100%;
         }
         to {
-          top: calc(100% + 2rem);
+          top: calc(100% + 1rem);
         }
       }
       @keyframes tooltip-slide-top {
@@ -212,7 +177,7 @@ export class GraniteTooltip extends LitElement {
           right: 100%;
         }
         to {
-          right: calc(100% + 3rem);
+          right: calc(100% + 1rem);
         }
       }
       @keyframes tooltip-slide-right {
@@ -220,7 +185,7 @@ export class GraniteTooltip extends LitElement {
           left: 100%;
         }
         to {
-          left: calc(100% + 3rem);
+          left: calc(100% + 1rem);
         }
       }
     `]

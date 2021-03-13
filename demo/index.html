@@ -53,7 +53,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         html`
           <p>Here you have an example of a Fate dice roller:</p>
           
-          <granite-fate-roller tooltip-position="bottom" debug></granite-fate-roller>
+          <granite-fate-roller
+              skill="Flashy"
+              bonus="+1"
+              tooltip-position="right" 
+              debug></granite-fate-roller>
         `,
         document.querySelector('#demo1')
       );

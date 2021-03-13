@@ -1,5 +1,6 @@
 import { LitElement, html, css, internalProperty } from 'lit-element';
-import { GraniteTooltip } from './granite-tooltip.js'
+import { GraniteTooltip } from './granite-tooltip.js';
+import { GraniteFateRoll } from './granite-fate-roll.js';
 
 export class GraniteFateRoller extends LitElement {
     
@@ -135,12 +136,18 @@ export class GraniteFateRoller extends LitElement {
   }
 
   render() {
-    console.log("dice",this.dice);
     return html`
       <button class="roller" @click="${this.rollDice}">
-        <granite-tooltip
-            .heading="${html`<h2>Tooltip</h2>`}"
-            .position="${this.tooltipPosition}">
+        <granite-tooltip 
+            .position="${this.tooltipPosition}"
+            .message="${html`
+              <granite-fate-roll 
+                  .skill="${this.skill}"
+                  .bonus="${this.bonus}"
+                  .dice="${this.dice}"
+                  .result="${this.result()}"
+                  .debug="${this.debug}"></granite-fate-roll>
+            `}">
           <span class="result">
             ${ this.result()}
           </span>
