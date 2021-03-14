@@ -131,8 +131,6 @@ export class GraniteTooltip extends LitElement {
         flex-flow: row nowrap;
         justify-content: space-evenly;
       }
-      .tooltip__message {
-      }
       .tooltip__close {
         text-decoration: underline;
         color: gray;

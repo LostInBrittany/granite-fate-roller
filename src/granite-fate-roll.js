@@ -1,9 +1,12 @@
 import { LitElement, html, css, internalProperty } from 'lit-element';
+import dateDiceStyles from './granite-fate-styles';
 
 export class GraniteFateRoll extends LitElement {
   
   static get styles() {
-    return css`
+    return [ 
+      dateDiceStyles,
+      css`
       :host {
         display: inline-block;
         font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
@@ -12,13 +15,8 @@ export class GraniteFateRoll extends LitElement {
       .roll {
         display: flex;
         flex-flow: row nowrap;
+        justify-content: space-evenly;
         font-size: 1.5em;
-      }
-      .roll-skill {
-        margin-right: 1em;
-        display: flex;
-        flex-flow: column nowrap;
-        align-items: center;
       }
       .roll-data {
         padding-right: 1em;
@@ -26,6 +24,12 @@ export class GraniteFateRoll extends LitElement {
         border-right: solid 2px #aaa;
         display: flex;
         flex-flow: column nowrap;
+        align-items: center;
+      }
+      .roll-data-skill {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
         align-items: center;
       }
       .roll-data-dice {
@@ -39,7 +43,6 @@ export class GraniteFateRoll extends LitElement {
         margin-right: 0.25em;
         width: 1.5em;
         height: 1.5em;
-        border: solid 2px black;
         font-weight: 900;
         display: flex;
         flex-flow: row nowrap;
@@ -47,8 +50,6 @@ export class GraniteFateRoll extends LitElement {
         align-items: center;
       }
       .roll-result {
-        margin-right: 2em;
-        display: flex;
         flex-flow: column nowrap;
         align-items: center;
       }
@@ -58,7 +59,8 @@ export class GraniteFateRoll extends LitElement {
         flex-flow: column nowrap;
         align-items: center;
       }
-    `;
+    `,
+    ]
   }
   static get properties() {
     return {
@@ -79,40 +81,41 @@ export class GraniteFateRoll extends LitElement {
 
   die(value) {
     if (value > 0) {
-      return "+";
+      return html`<div class="fate-dice-plus"></div>`;
     }
     if (value < 0) {
-      return "-";
-    }
-    return "";
+      return html`<div class="fate-dice-minus"></div>`;
+    } 
+    return html`<div class="fate-dice-blank"></div>`;;
   }
 
   render() {
     return html`
       <div class="roll">
-        ${
-          this.skill != "" 
-          ? html`
-            <div class="roll-skill">
-              <h4 class="roll-skillname">${this.skill}</h4>
-              <div class="roll-bonus">
-                ${this.bonus} 
-              </div>
-            </div>
-          ` 
-          : '' 
-        }        
         <div class="roll-data">
-          <h4>Roll</h4>
+          <div class="roll-data-description">
+            Roll
+            ${
+              this.skill != "" 
+              ? html`: ${this.skill}`
+              : ''
+            }
+          </div>
           <div class="roll-data-dice">
-            ${this.dice.map((item) => {
-              return html`<div class="die">${this.die(item)}</div>`
-            })}
+              ${
+                this.skill != "" 
+                ? html`${this.bonus}+`
+                : ''
+              }
+              <div class="die">${this.die(0)}</div> + 
+              <div class="die">${this.die(1)}</div> +
+              <div class="die">${this.die(2)}</div> +
+              <div class="die">${this.die(3)}</div> 
           </div>
         </div>
         <div class="roll-result">
-          <h4>Result</h4>
-          <div class="result">
+          <div class="roll-result-description">Result</div>
+          <div class="roll-result-value">
             ${this.result}
           </div>
         </div>
