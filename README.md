@@ -2,7 +2,7 @@
 
 A Fate dice roller
 
-
+![granite-fate-roller](./assets/fate-dice-roller-1.1.0.png)
 
 ## Using `granite-fate-roller`
 
