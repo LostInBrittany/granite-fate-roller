@@ -1,5 +1,5 @@
 import { LitElement, html, css, internalProperty } from 'lit-element';
-import { GraniteTooltip } from './granite-tooltip.js';
+import { GraniteFateTooltip } from './granite-fate-tooltip.js';
 import { GraniteFateRoll } from './granite-fate-roll.js';
 
 import dateDiceStyles from './granite-fate-styles';
@@ -144,7 +144,7 @@ export class GraniteFateRoller extends LitElement {
   render() {
     return html`
       <button class="roller" @click="${this.rollDice}">
-        <granite-tooltip 
+        <granite-fate-tooltip 
             .position="${this.tooltipPosition}"
             .message="${html`
               <granite-fate-roll 
@@ -157,7 +157,7 @@ export class GraniteFateRoller extends LitElement {
           <span class="result">
             ${ this.result()}
           </span>
-        </granite-tooltip>
+        </granite-fate-tooltip>
       </button>
     `;
   }

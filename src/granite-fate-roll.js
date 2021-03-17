@@ -94,34 +94,39 @@ export class GraniteFateRoll extends LitElement {
 
   render() {
     return html`
-      <div class="roll">
-        <div class="roll-data">
-          <div class="roll-data-description">
-            Roll
-            ${
-              this.skill != "" 
-              ? html`: ${this.skill}`
-              : ''
-            }
-          </div>
-          <div class="roll-data-dice">
-              ${
-                this.skill != "" 
-                ? html`${this.bonus}+`
-                : ''
-              }
-              <div class="die">${this.die(this.dice[0])}</div> + 
-              <div class="die">${this.die(this.dice[1])}</div> +
-              <div class="die">${this.die(this.dice[2])}</div> +
-              <div class="die">${this.die(this.dice[3])}</div> 
-          </div>
-        </div>
-        <div class="roll-result">
-          <div class="roll-result-description">Result</div>
-          <div class="roll-result-value">
-            ${this.result}
-          </div>
-        </div>
+      <div class="roll">  
+        ${
+          (this.dice && this.dice.length > 0) 
+          ? html`       
+            <div class="roll-data">
+              <div class="roll-data-description">
+                Roll
+                ${
+                  this.skill != "" 
+                  ? html`: ${this.skill}`
+                  : ''
+                }
+              </div>
+              <div class="roll-data-dice">
+                  ${
+                    this.skill != "" 
+                    ? html`${this.bonus}+`
+                    : ''
+                  }         
+                  <div class="die">${this.die(this.dice[0])}</div> + 
+                  <div class="die">${this.die(this.dice[1])}</div> +
+                  <div class="die">${this.die(this.dice[2])}</div> +
+                  <div class="die">${this.die(this.dice[3])}</div>
+              </div>
+            </div>
+            <div class="roll-result">
+              <div class="roll-result-description">Result</div>
+              <div class="roll-result-value">
+                ${this.result}
+              </div>
+            </div>`
+          : ''
+        }
       </div>
     `;
   }

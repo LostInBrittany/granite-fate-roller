@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit-element';
 
-export class GraniteTooltip extends LitElement {
+export class GraniteFateTooltip extends LitElement {
   static get properties() {
     return {
       heading: { type: Object },
@@ -193,4 +193,4 @@ export class GraniteTooltip extends LitElement {
   }
 }
 
-customElements.define('granite-tooltip', GraniteTooltip);
+customElements.define('granite-fate-tooltip', GraniteFateTooltip);
