@@ -1,6 +1,6 @@
 {
   "name": "@granite-elements/granite-fate-roller",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A Fate dice roller web component",
   "main": "granite-fate-roller.js",
   "module": "granite-fate-roller.js",

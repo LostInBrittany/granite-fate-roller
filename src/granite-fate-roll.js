@@ -73,6 +73,9 @@ export class GraniteFateRoll extends LitElement {
       dice: {
         type: Array,
       },
+      result: {
+        type: Number
+      },
       debug: {
         type: Boolean,
       }
@@ -107,10 +110,10 @@ export class GraniteFateRoll extends LitElement {
                 ? html`${this.bonus}+`
                 : ''
               }
-              <div class="die">${this.die(0)}</div> + 
-              <div class="die">${this.die(1)}</div> +
-              <div class="die">${this.die(2)}</div> +
-              <div class="die">${this.die(3)}</div> 
+              <div class="die">${this.die(this.dice[0])}</div> + 
+              <div class="die">${this.die(this.dice[1])}</div> +
+              <div class="die">${this.die(this.dice[2])}</div> +
+              <div class="die">${this.die(this.dice[3])}</div> 
           </div>
         </div>
         <div class="roll-result">

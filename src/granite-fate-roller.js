@@ -12,6 +12,7 @@ export class GraniteFateRoller extends LitElement {
       css`
         :host {
           display: inline-block;
+          font-size: 100%;
         }
         .roller {
           color: inherit;
@@ -34,17 +35,17 @@ export class GraniteFateRoller extends LitElement {
           -webkit-tap-highlight-color: transparent;
         }
         .result{
-          font-size: 4.5rem;
+          font-size: var(--fate-font-size, 32px);
           font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
           line-height: normal;
           color: inherit;
           background: rgb(255, 255, 255);
-          border: 0.5rem solid rgba(0, 0, 0, 0.87);
+          border: calc(0.1 * var(--fate-font-size, 32px)) solid rgba(0, 0, 0, 0.87);
           border-radius: 4px;
           padding: 0.2rem;
-          min-width: 7rem;
-          height: 7rem;
-          width: 7rem;
+          min-width: calc(1.5 * var(--fate-font-size, 32px));
+          height: calc(1.5 * var(--fate-font-size, 32px));
+          width: calc(1.5 * var(--fate-font-size, 32px));
           display: flex;
           -webkit-box-pack: center;
           justify-content: center;
@@ -142,8 +143,6 @@ export class GraniteFateRoller extends LitElement {
 
   render() {
     return html`
-      <div class="fate-dice-plus"></div>
-      <br />
       <button class="roller" @click="${this.rollDice}">
         <granite-tooltip 
             .position="${this.tooltipPosition}"

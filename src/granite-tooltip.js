@@ -77,6 +77,9 @@ export class GraniteTooltip extends LitElement {
       :host {
         font-size: 12px;
       }
+      ::slotted(*) {
+        font-size: 100%;
+      }
       .tooltip {
         position: relative;
         z-index: unset;
