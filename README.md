@@ -1,8 +1,8 @@
 # granite-fate-roller
 
-A Fate dice roller
+A Fate RPG dice roller web component
 
-![granite-fate-roller](./assets/fate-dice-roller-1.1.0.png)
+![granite-fate-roller](./assets/fate-dice-roller-2.0.0.png)
 
 ## Using `granite-fate-roller`
 

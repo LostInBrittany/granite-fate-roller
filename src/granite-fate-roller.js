@@ -1,4 +1,4 @@
-import { LitElement, html, css, internalProperty } from 'lit-element';
+import { LitElement, html, css } from 'lit';
 import { GraniteFateTooltip } from './granite-fate-tooltip.js';
 import { GraniteFateRoll } from './granite-fate-roll.js';
 

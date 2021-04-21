@@ -1,4 +1,4 @@
-import { LitElement, html, css, internalProperty } from 'lit-element';
+import { LitElement, html, css } from 'lit';
 import dateDiceStyles from './granite-fate-styles';
 
 export class GraniteFateRoll extends LitElement {
